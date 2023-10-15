@@ -4,32 +4,41 @@ import Palette from "./components/Palette";
 import PaletteList from "./components/PaletteList";
 import SingleColorPalette from "./components/SingleColorPalette";
 import seedColors from "./components/seedColors";
-import {generatePalette} from './components/colorHelpers'
+import { generatePalette } from './components/colorHelpers'
 import NewPaletteForm from "./components/NewPaletteForm";
 
 class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = { palettes : seedColors };
+    const savedPalettes = JSON.parse(window.localStorage.getItem("palettes"));
+    this.state = { palettes: savedPalettes || seedColors };
     this.savePalette = this.savePalette.bind(this);
     this.findPalette = this.findPalette.bind(this);
   }
 
   findPalette(id) {
-    return this.state.palettes.find(function(palette) {
+    return this.state.palettes.find(function (palette) {
       return palette.id === id;
     });
-  }
+  };
 
-  savePalette(newPalette){
-    this.setState({ palettes: [...this.state.palettes, newPalette] });
-  }
+  savePalette(newPalette) {
+    this.setState({ palettes: [...this.state.palettes, newPalette] },
+      this.syncLocalStorage);
+  };
+
+  syncLocalStorage() {
+    window.localStorage.setItem(
+      "palettes", 
+      JSON.stringify(this.state.palettes)
+      );
+  };
 
   render() {
     return (
       <Switch>
-        <Route exact path='/palette/new' render={(routeProps)=> <NewPaletteForm savePalette={this.savePalette} palettes={this.state.palettes} {...routeProps} />} />
+        <Route exact path='/palette/new' render={(routeProps) => <NewPaletteForm savePalette={this.savePalette} palettes={this.state.palettes} {...routeProps} />} />
         <Route
           exact
           path='/palette/:paletteId/:colorId'
