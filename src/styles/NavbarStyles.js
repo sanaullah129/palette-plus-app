@@ -1,4 +1,6 @@
-export default {
+import styleReferences from '../constants/sizes.js';
+
+const styles = {
   Navbar: {
     display: "flex",
     alignItems: "center",
@@ -17,6 +19,9 @@ export default {
     "& a": {
       textDecoration: "none",
       color: "black"
+    },
+    [styleReferences.down("xs")]: {
+      display: "none"
     }
   },
   slider: {
@@ -38,6 +43,9 @@ export default {
       height: "13px",
       marginLeft: "-7px",
       marginTop: "-3px"
+    },
+    [styleReferences.down("md")]: {
+      width: "150px"
     }
   },
   selectContainer: {
@@ -45,3 +53,5 @@ export default {
     marginRight: "1rem"
   }
 };
+
+export default styles;
