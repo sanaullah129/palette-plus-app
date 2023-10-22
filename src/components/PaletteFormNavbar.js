@@ -47,7 +47,8 @@ export class PaletteFormNavbar extends Component {
 
     render() {
 
-        const { classes, open, palettes, handleSubmit } = this.props;
+        const { classes, open, palettes, handleSubmit, handleDrawerOpen } = this.props;
+        const { formShowing } = this.state;
 
         return (
             <div className={classes.root} >
@@ -63,7 +64,7 @@ export class PaletteFormNavbar extends Component {
                     <IconButton
                         color="inherit"
                         aria-label="Open drawer"
-                        onClick={this.props.handleDrawerOpen}
+                        onClick={handleDrawerOpen}
                         className={classNames(classes.menuButton, {[classes.hide]: open})}
                     >
                         <AddToPhotosRounded />
@@ -81,7 +82,7 @@ export class PaletteFormNavbar extends Component {
                     </Link>
                 </div>
                 </AppBar>
-                { this.state.formShowing && (<PaletteMetaForm palettes={ palettes } hideForm = { this.hideForm } handleSubmit = { handleSubmit } />)}
+                { formShowing && (<PaletteMetaForm palettes={ palettes } hideForm = { this.hideForm } handleSubmit = { handleSubmit } />)}
             </div>
         )
     }

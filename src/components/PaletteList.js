@@ -15,6 +15,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
+import Button from '@material-ui/core/Button';
 
 class PaletteList extends Component {
 
@@ -26,6 +27,15 @@ class PaletteList extends Component {
     };
     this.toggleDeleteDialog = this.toggleDeleteDialog.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.goToPalette = this.goToPalette.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleReset () {
+    // Clear local storage
+    window.localStorage.removeItem("palettes");
+    // Reload the page
+    window.location.reload();
   }
 
   toggleDeleteDialog(id) {
@@ -55,15 +65,17 @@ class PaletteList extends Component {
         <div className={classes.container}>
           <nav className={classes.nav}>
             <h1 className={classes.heading} >Palette Plus</h1>
-            <Link to='/palette/new'>Create Palette</Link>
+            <div>
+              <Link to='/palette/new'>Create Palette</Link>
+              <Button onClick={this.handleReset} >Reset all Palettes</Button>
+            </div>            
           </nav>
           <TransitionGroup className={classes.palettes}>
             {palettes.map(palette => (
               <CSSTransition key={palette.id} classNames='fade' timeout={500}>
                 <MiniPalette
                   {...palette}
-                  handleClick={() => this.goToPalette(palette.id)}
-                  // handleDelete={deletePalette}
+                  goToPalette={this.goToPalette}
                   toggleDeleteDialog ={this.toggleDeleteDialog}
                   key={palette.id}
                   id={palette.id}

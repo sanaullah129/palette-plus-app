@@ -44,7 +44,7 @@ const styles = {
       marginLeft: "-7px",
       marginTop: "-3px"
     },
-    [styleReferences.down("md")]: {
+    [styleReferences.down("sm")]: {
       width: "150px"
     }
   },
