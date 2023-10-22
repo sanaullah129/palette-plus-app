@@ -1,15 +1,31 @@
 import styleReferences from "../constants/sizes.js";
+import background from '../constants/background.svg'
 
 const styles = {
+  "@global": {
+    ".fade-exit": {
+      opacity: 1
+    },
+    ".fade-exit-active": {
+      opacity: 0,
+      transition: "opacity 500ms ease-out"
+    }
+  },
   root: {
-    backgroundColor: "blue",
     height: "140vh",
     display: "flex",
     alignItems: "flex-start",
-    justifyContent: "center"
+    justifyContent: "center",
+    /* background by SVGBackgrounds.com */
+    backgroundColor: "#394bad",
+    backgroundImage: `url(${background})`,
+    overflow: "scroll"
+  },
+  heading: {
+    fontSize: "2rem"
   },
   container: {
-    width: "60%",
+    width: "80%",
     display: "flex",
     alignItems: "flex-start",
     flexDirection: "column",
@@ -23,7 +39,7 @@ const styles = {
   },
   nav: {
     display: "flex",
-    width: "100%",
+    width: "90%",
     justifyContent: "space-between",
     alignItems: "center",
     color: "white",
@@ -36,13 +52,18 @@ const styles = {
     width: "100%",
     display: "grid",
     gridTemplateColumns: "repeat(3, 30%)",
-    gridGap: "2.5rem",
+    gridGap: "30px",
     [styleReferences.down("md")]: {
       gridTemplateColumns: "repeat(2, 50%)"
     },
     [styleReferences.down("xs")]: {
       gridTemplateColumns: "repeat(1, 100%)",
-      gridGap: "1rem"
+      gridGap: "14px"
+    }
+  },
+  dialogTitle:{
+    "& h2":{
+      fontSize: "20px"
     }
   }
 };

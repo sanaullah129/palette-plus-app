@@ -1,8 +1,8 @@
 const styles = {
   root: {
     backgroundColor: "white",
-    width: "100%",
-    height: "100%",
+    width: "80%",
+    height: "auto",
     border: "1px solid black",
     borderRadius: "5px",
     padding: "0.5rem",
