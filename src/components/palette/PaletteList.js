@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import MiniPalette from "./MiniPalette";
-import { withStyles } from "@material-ui/core/styles"; // Correct import
+import { withStyles } from "@material-ui/core/styles";
 import styles from "../../styles/PaletteListStyles";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Dialog from "@material-ui/core/Dialog";
@@ -15,7 +14,6 @@ import CloseIcon from "@material-ui/icons/Close";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -100,11 +98,11 @@ class PaletteList extends Component {
               open={Boolean(menuAnchorEl)}
               onClose={this.handleMenuClose}
             >
-              <MenuItem onClick={this.handleCreatePalette} >
+              <MenuItem onClick={this.handleCreatePalette}  title="Create a new Palette" >
                 Create Palette
               </MenuItem>
-              <MenuItem onClick={this.handleReset}>Reset all Palettes</MenuItem>
-              <MenuItem onClick={this.redirectToAbout}>About</MenuItem>
+              <MenuItem onClick={this.handleReset}  title="Delete all current palettes and retrieve the original 9 palettes">Reset all Palettes</MenuItem>
+              <MenuItem onClick={this.redirectToAbout} title="Use Case, Information, Contact">About</MenuItem>
             </Menu>
           </nav>
           <TransitionGroup className={classes.palettes}>
