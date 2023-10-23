@@ -11,6 +11,14 @@ const styles = {
       transition: "opacity 500ms ease-out"
     }
   },
+  menuIcon: {
+    background: 'white', 
+    color: 'black',
+    '&:hover': {
+      background: '#b5b9ba',
+      color: 'black', // Change text color on hover
+    },
+  },
   root: {
     height: "140vh",
     display: "flex",

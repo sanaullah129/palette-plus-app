@@ -1,17 +1,17 @@
+import { FullscreenExit } from "@material-ui/icons";
+
 const styles = {
   picker: {
     width: "100% !important",
-    marginTop: "2rem"
+    marginTop: "20px"
   },
   addColor: {
-    width: "100%",
-    padding: "1rem",
-    marginTop: "1rem",
-    fontSize: "2rem"
+    width: "100%",    
+    fontSize: "12px"
   },
   colorNameInput: {
     width: "100%",
-    height: "70px"
+    height: "60px"
   }
 };
 

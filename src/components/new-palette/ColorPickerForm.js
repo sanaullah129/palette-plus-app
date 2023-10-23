@@ -44,7 +44,7 @@ class ColorPickerForm extends Component {
     const { paletteIsFull, classes } = this.props;
     const { currentColor, newColorName } = this.state;
     return (
-      <div>
+      <div className={classes.root} >
         <ChromePicker
           color={currentColor}
           onChangeComplete={this.updateCurrentColor}

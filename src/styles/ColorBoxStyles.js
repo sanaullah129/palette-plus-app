@@ -46,7 +46,11 @@ const styles = {
     height: "30px",
     textAlign: "center",
     lineHeight: "30px",
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    [styleReferences.down("sm")]: {
+      width: "50px",
+      height: "25px"
+    }
   },
   copyButton: {
     color: props =>

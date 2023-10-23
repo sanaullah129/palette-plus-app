@@ -8,6 +8,7 @@ import NewPaletteForm from "./components/new-palette/NewPaletteForm";
 import { generatePalette } from "./constants/colorHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Page from "./components/palette/Page";
+import About from "./constants/About.js";
 
 class App extends Component {
   constructor(props) {
@@ -49,9 +50,16 @@ class App extends Component {
           <TransitionGroup>
             <CSSTransition key={location.key} classNames='page' timeout={500}>
               <Switch location={location}>
+              <Route
+                  exact path='/about'
+                  render={routeProps => (
+                    <Page>
+                      <About />
+                    </Page>
+                  )}
+                />
                 <Route
-                  exact
-                  path='/palette/new'
+                  exact path='/palette/new'
                   render={routeProps => (
                     <Page>
                       <NewPaletteForm
@@ -63,8 +71,7 @@ class App extends Component {
                   )}
                 />
                 <Route
-                  exact
-                  path='/palette/:paletteId/:colorId'
+                  exact path='/palette/:paletteId/:colorId'
                   render={routeProps => (
                     <Page>
                       <SingleColorPalette
@@ -77,8 +84,7 @@ class App extends Component {
                   )}
                 />
                 <Route
-                  exact
-                  path='/'
+                  exact path='/'
                   render={routeProps => (
                     <Page>
                       <PaletteList
@@ -90,8 +96,7 @@ class App extends Component {
                   )}
                 />
                 <Route
-                  exact
-                  path='/palette/:id'
+                  exact path='/palette/:id'
                   render={routeProps => (
                     <div className='page'>
                       <Palette

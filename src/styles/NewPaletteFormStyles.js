@@ -3,7 +3,7 @@ const drawerWidth = DRAWER_WIDTH;
 
 const styles = theme => ({
   root: {
-    display: "flex"
+    display: "flex",
   },
   drawer: {
     width: drawerWidth,
@@ -41,18 +41,24 @@ const styles = theme => ({
     marginLeft: 0
   },
   container: {
-    width: "90%",
-    height: "100%",
+    width: "100%",
+    height: "90%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    padding: "0 15px 15px 15px"
   },
   buttons: {
-    width: "100%"
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around"
   },
   button: {
-    width: "50%"
+    width: "45%",
+    "& span":{
+      fontSize: "12px"
+    }
   }
 });
 
