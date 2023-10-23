@@ -11,8 +11,9 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Button from "@material-ui/core/Button";
 import DraggableColorList from "./DraggableColorList";
 import { arrayMove } from "react-sortable-hoc";
-import styles from "../styles/NewPaletteFormStyles.js";
-import seedColors from '../constants/seedColors.js'
+import styles from "../../styles/NewPaletteFormStyles.js";
+import seedColors from '../../constants/seedColors.js'
+
 class NewPaletteForm extends Component {
   static defaultProps = {
     maxColors: 20

@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import { ValidatorForm } from 'react-material-ui-form-validator';
 import { Link } from 'react-router-dom';
 import PaletteMetaForm from './PaletteMetaForm';
-import styles from '../styles/PaletteFormNavbarStyles.js';
+import styles from '../../styles/PaletteFormNavbarStyles.js';
 import Typography from "@material-ui/core/Typography";
 
 export class PaletteFormNavbar extends Component {
