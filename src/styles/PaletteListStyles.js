@@ -27,7 +27,7 @@ const styles = {
     /* background by SVGBackgrounds.com */
     backgroundColor: "#394bad",
     backgroundImage: `url(${background})`,
-    overflow: "scroll"
+    overflow: "scroll",
   },
   heading: {
     fontSize: "2rem"
@@ -61,6 +61,7 @@ const styles = {
     display: "grid",
     gridTemplateColumns: "repeat(3, 30%)",
     gridGap: "30px",
+    padding: "20px",
     [styleReferences.down("md")]: {
       gridTemplateColumns: "repeat(2, 50%)"
     },

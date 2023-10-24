@@ -8,7 +8,7 @@ import NewPaletteForm from "./components/new-palette/NewPaletteForm";
 import { generatePalette } from "./constants/colorHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Page from "./components/palette/Page";
-import About from "./constants/About.js";
+import About from "./components/common/About.js";
 
 class App extends Component {
   constructor(props) {
