@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/palette-plus-app/static/css/main.b7371c06.css",
+    "main.js": "/palette-plus-app/static/js/main.2af9a0b4.js",
+    "static/js/787.04cfe122.chunk.js": "/palette-plus-app/static/js/787.04cfe122.chunk.js",
+    "static/media/instagram.svg": "/palette-plus-app/static/media/instagram.c83e628eea4e83e0d2b6c8e54910510c.svg",
+    "static/media/background.svg": "/palette-plus-app/static/media/background.c99d9e1b84c41f14d53fe9f4330ec652.svg",
+    "static/media/root-background.svg": "/palette-plus-app/static/media/root-background.bbe58fe67fe0a9b6f67d96c374e3ef1d.svg",
+    "static/media/github.svg": "/palette-plus-app/static/media/github.f112ca88463502035e6ab55dd7b2fb14.svg",
+    "index.html": "/palette-plus-app/index.html",
+    "static/media/linkedin.svg": "/palette-plus-app/static/media/linkedin.ada11cda991129bc91b79d2c7cee1066.svg",
+    "main.b7371c06.css.map": "/palette-plus-app/static/css/main.b7371c06.css.map",
+    "main.2af9a0b4.js.map": "/palette-plus-app/static/js/main.2af9a0b4.js.map",
+    "787.04cfe122.chunk.js.map": "/palette-plus-app/static/js/787.04cfe122.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7371c06.css",
+    "static/js/main.2af9a0b4.js"
+  ]
+}
