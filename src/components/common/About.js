@@ -44,7 +44,7 @@ class About extends Component {
               <div className={classes.icons} >
                 <a href="https://github.com/sanaullah129?tab=repositories" target='blank'><img src={github} alt="github" />
 </a>
-                <a href="www.linkedin.com/in/sanaullah129" target='blank'><img src={linkedin} alt="linekdin" />
+                <a href="https://www.linkedin.com/in/sanaullah129" target='blank'><img src={linkedin} alt="linekdin" />
 </a>                
                 <a href="https://www.instagram.com/sanaullah129/" target='blank'><img src={instagram} alt="instagram" /></a>
               </div>              
