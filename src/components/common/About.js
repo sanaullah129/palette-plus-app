@@ -37,7 +37,7 @@ class About extends Component {
           <div className={classes.social}>
             <h2>About</h2>
             <div className={classes.aboutDescription} >
-              Greetings! I'm Sanaullah Ansari, the creator and administrator of this React-based application. I've  developed this project as part of my journey to sharpen my React skills and further my expertise in  various areas of software development. As a Junior Software Developer, I'm passionate about expanding  my knowledge and experience across a wide range of domains. My skillset includes proficiency in several  technologies and tools, such as: ASP.NET Core, ReactJs, NodeJs, NextJs, Redux, WordPress, Java, Python,  JavaScript, MySQL | MSSQL , MongoDb, Puppeteer, Bootstrap, MaterialUI, CSS3, and HTML5.
+              Greetings! I'm Sanaullah Ansari, the creator and administrator of this React-based application. I've  developed this project as part of my journey to sharpen my React skills and further my expertise in  various areas of software development. As a Junior Software Developer, I'm passionate about expanding  my knowledge and experience across a wide range of domains. My skillset includes proficiency in several  technologies and tools, such as: <a>ASP.NET Core, ReactJs, NodeJs, NextJs, Redux, WordPress, Java, Python,  JavaScript, MySQL | MSSQL , MongoDb, Puppeteer, Bootstrap, MaterialUI, CSS3, and HTML5.</a>
             </div>
             <div className={classes.socialProfile} >
             Feel free to explore my social profiles to get in touch and learn more about me:

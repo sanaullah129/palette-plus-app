@@ -117,7 +117,11 @@ const styles = {
         color: "#d4d8d9",
         padding: "10px",
         textAlign: "justify",
-        fontWeight: "750"
+        fontWeight: "750",
+        '& a': {
+            textDecoration: "underline",
+            fontWeight: "800"
+        }
     }
 }
 
