@@ -94,6 +94,7 @@ const styles = {
         flexDirection: 'column',
         justifyContent: "space-evenly",
         padding: "0px 10px 0px 10px",
+        fontSize: "14px",
         '& a': {
             textDecoration: "none",
             color: '#d4d8d9'
@@ -118,9 +119,10 @@ const styles = {
         padding: "10px",
         textAlign: "justify",
         fontWeight: "750",
-        '& a': {
+        '& p': {
             textDecoration: "underline",
-            fontWeight: "800"
+            fontWeight: "700",
+            fontSize: "12px"
         }
     }
 }
