@@ -19,12 +19,12 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuIcon from "@material-ui/icons/Menu";
 
-
 class PaletteList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       openDeleteDialog: false,
+      openResetDialog: false, // New state for reset confirmation dialog
       deletingId: "",
       menuAnchorEl: null,
     };
@@ -48,6 +48,13 @@ class PaletteList extends Component {
     }));
   }
 
+  // Toggle the reset confirmation dialog
+  toggleResetDialog = () => {
+    this.setState((prevState) => ({
+      openResetDialog: !prevState.openResetDialog,
+    }));
+  };
+
   handleDelete() {
     const { deletingId } = this.state;
     this.props.deletePalette(deletingId);
@@ -66,17 +73,17 @@ class PaletteList extends Component {
     this.setState({ menuAnchorEl: null });
   };
 
-  handleCreatePalette(){
-    window.location.href = "/palette/new"
+  handleCreatePalette() {
+    window.location.href = "/palette/new";
   }
 
-  redirectToAbout(){
-    window.location.href = "/about"
+  redirectToAbout() {
+    window.location.href = "/about";
   }
 
   render() {
     const { palettes, classes } = this.props;
-    const { openDeleteDialog, menuAnchorEl } = this.state;
+    const { openDeleteDialog, openResetDialog, menuAnchorEl } = this.state;
 
     return (
       <div className={classes.root}>
@@ -98,11 +105,24 @@ class PaletteList extends Component {
               open={Boolean(menuAnchorEl)}
               onClose={this.handleMenuClose}
             >
-              <MenuItem onClick={this.handleCreatePalette}  title="Create a new Palette" >
+              <MenuItem
+                onClick={this.handleCreatePalette}
+                title="Create a new Palette"
+              >
                 Create Palette
               </MenuItem>
-              <MenuItem onClick={this.handleReset}  title="Delete all current palettes and retrieve the original 9 palettes">Reset all Palettes</MenuItem>
-              <MenuItem onClick={this.redirectToAbout} title="Use Case, Information, Contact">About</MenuItem>
+              <MenuItem
+                onClick={this.toggleResetDialog} // Open the reset dialog
+                title="Delete all current palettes and retrieve the original 9 palettes"
+              >
+                Reset all Palettes
+              </MenuItem>
+              <MenuItem
+                onClick={this.redirectToAbout}
+                title="Use Case, Information, Contact"
+              >
+                About
+              </MenuItem>
             </Menu>
           </nav>
           <TransitionGroup className={classes.palettes}>
@@ -137,6 +157,36 @@ class PaletteList extends Component {
               <ListItemText primary="Delete" />
             </ListItem>
             <ListItem button onClick={this.toggleDeleteDialog}>
+              <ListItemAvatar>
+                <Avatar style={{ backgroundColor: red[100], color: red[600] }}>
+                  <CloseIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Cancel" />
+            </ListItem>
+          </List>
+        </Dialog>
+
+        {/* Reset Confirmation Dialog */}
+        <Dialog
+          open={openResetDialog}
+          aria-labelledby="reset-dialog-title"
+          onClose={this.toggleResetDialog}
+        >
+          <DialogTitle className={classes.resetDialogTitle} id="reset-dialog-title">
+            Are you sure you want to Reset all Palettes?
+            <br/> <p>Note: You should be aware that resetting all palettes will permanently delete any custom palettes you've created. The application will revert to displaying the original nine preset palettes, and you won't be able to recover your previously deleted data.</p>
+          </DialogTitle>
+          <List>
+            <ListItem button onClick={this.handleReset}>
+              <ListItemAvatar>
+                <Avatar style={{ backgroundColor: blue[100], color: blue[600] }}>
+                  <CheckIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Reset" />
+            </ListItem>
+            <ListItem button onClick={this.toggleResetDialog}>
               <ListItemAvatar>
                 <Avatar style={{ backgroundColor: red[100], color: red[600] }}>
                   <CloseIcon />
