@@ -74,6 +74,17 @@ const styles = {
     "& h2":{
       fontSize: "20px"
     }
+  },
+  resetDialogTitle:{
+    fontSize: "18px",
+    lineHeight: "normal",
+    "& p":{
+      fontSize: "15px",
+      lineHeight: "normal",
+      textAlign: "justify",
+      textDecoration: "underline",
+      color: "red"
+    }
   }
 };
 
