@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import linkedin from '../../constants/linkedin.svg';
 import instagram from '../../constants/instagram.svg';
 import github from '../../constants/github.svg';
+import gmail from '../../constants/gmail.svg';
 
 class About extends Component {
   render() {
@@ -38,18 +39,19 @@ class About extends Component {
             <h2>About</h2>
             <div className={classes.aboutDescription} >
               Greetings! I'm Sanaullah Ansari, the creator and administrator of this React-based application. I've  developed this project as part of my journey to sharpen my React skills and further my expertise in  various areas of software development. As a Junior Software Developer, I'm passionate about expanding  my knowledge and experience across a wide range of domains. My skillset includes proficiency in several  technologies and tools, such as: <p>ASP.NET Core, ReactJs, NodeJs, NextJs, Redux, WordPress, Java, Python,  JavaScript, MySQL | MSSQL , MongoDb, Puppeteer, Bootstrap, MaterialUI, CSS3, and HTML5.</p>
-              <hr/>
+              <hr />
             </div>
             <div className={classes.socialProfile} >
-            Feel free to explore my social profiles to get in touch and learn more about me:
+              Feel free to explore my social profiles to get in touch and learn more about me:
               <div className={classes.icons} >
                 <a href="https://github.com/sanaullah129?tab=repositories" target='blank'><img src={github} alt="github" />
-</a>
+                </a>
                 <a href="https://www.linkedin.com/in/sanaullah129" target='blank'><img src={linkedin} alt="linekdin" />
-</a>                
+                </a>
                 <a href="https://www.instagram.com/sanaullah129/" target='blank'><img src={instagram} alt="instagram" /></a>
-              </div>              
-            </div>            
+                <a href="mailto:asanaullah129@gmail.com" target='blank'><img src={gmail} alt="email" /></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
